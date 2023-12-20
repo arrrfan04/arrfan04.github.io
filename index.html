@@ -11,6 +11,9 @@
     <!-- Bootsrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 
@@ -48,7 +51,7 @@
     <section class="jumbotron text-center">
       <img src="img/foto.jpg" alt="Arfan Armanto" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4 fw-bold">Arfan Armanto</h1>
-      <p class="lead">Fresh Graduate | Informatics Engineering</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffff"
@@ -71,10 +74,10 @@
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">
             <p>Hello everyone!, my name is Arfan Armanto, I am 22 years old from Ternate City, I am a person who likes to socialize, communicate and work with new people.</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
             <p>Other than that I have the ability to operate a computer, and have the ability in the IT field, namely in Data Processing and Interface Design in an application.</p>
           </div>
         </div>
@@ -99,7 +102,7 @@
         </div>
         <div class="row">
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-right" data-aos-duration="1000">
               <img src="img/projects/foto1.jpg" class="card-img-top" alt="Project 1" />
               <div class="card-body">
                 <p class="card-text">Gunadarma University's Google Developer Students was formed in 2019 with the aim of creating an environment where students can learn, collaborate, and develop innovative projects.</p>
@@ -107,7 +110,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="100">
               <img src="img/projects/foto2.jpg" class="card-img-top" alt="Project 2" />
               <div class="card-body">
                 <p class="card-text">The Ternate Student Association JABODETABEK was formed in 2021 based on the principle of kinship which has the main objective of accommodating Ternate students in the JABODETABEK area.</p>
@@ -115,7 +118,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="200">
               <img src="img/projects/foto3.jpg" class="card-img-top" alt="Project 3" />
               <div class="card-body">
                 <p class="card-text">BUMN's Generation Talented Internship (MAGENTA) is an internship program for students and fresh graduates to apply the knowledge they have gained by practicing directly in the world of work.</p>
@@ -190,6 +193,24 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: false,
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/TextPlugin.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to(".lead", { duration: 2, delay: 1.5, text: "Fresh Graduate | Informatics Engineering" });
+      gsap.from(".jumbotron img", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
+      gsap.from(".navbar", { duration: 1.5, y: "-100%", opacity: 0 });
+      gsap.from(".display-4", { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: "back" });
+    </script>
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycby3exWBZpKC6nPD2YbjgYAlqTekHOFR-w7jTuKYqsUi98CM1Ivlep6yRcaw9qyzQyYh/exec";
       const form = document.forms["web-portfolio-contact-form"];
